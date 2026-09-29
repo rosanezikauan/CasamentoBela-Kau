@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>casamentoBela&Kau</title>
+  <style>
+    body { font-family: 'Georgia', serif; margin:0; background:#fff; color:#333; }
+    header { background:#5a1f2d; color:white; text-align:center; padding:60px 20px; }
+    header h1 { font-size:3em; margin:0; }
+    section { padding:60px 20px; max-width:900px; margin:auto; }
+    h2 { color:#b8860b; font-family:'Times New Roman', serif; } /* dourado suave */
+    .polaroid { background:white; padding:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px; display:inline-block; transform:rotate(-2deg); }
+    .collage { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .timeline { border-left:3px solid #5a1f2d; padding-left:20px; }
+    .timeline div { margin-bottom:20px; }
+    footer { background:#5a1f2d; color:white; text-align:center; padding:20px; }
+    form { display:flex; flex-direction:column; gap:10px; }
+    input, button { padding:10px; font-size:1em; }
+    button { background:#2e5a3f; color:white; border:none; cursor:pointer; }
+    #contador { font-size:1.5em; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kauã & Isabela</h1>
+    <p>O amor nos trouxe até aqui. Vocês fazem parte do caminho. Sejam bem-vindos</p>
+    <p>07/08/2027 · 15h30 · Recanto do Januário</p>
+    <div id="contador"></div>
+  </header>
+
+  <section id="historia">
+    <h2>Nossa História</h2>
+    <p>Algumas histórias começam quando duas pessoas se conhecem... (texto completo aqui)</p>
+    <div class="polaroid"><img src="foto1.jpeg" width="250"></div>
+    <div class="polaroid"><img src="foto2.jpeg" width="250"></div>
+    <div class="collage">
+      <img src="foto3.jpeg" width="200">
+      <img src="foto4.jpeg" width="200">
+      <img src="foto5.jpeg" width="200">
+    </div>
+  </section>
+
+  <section id="evento">
+    <h2>O Evento</h2>
+    <img src="recanto.jpeg" width="100%">
+    <iframe src="https://www.google.com/maps/embed?..."></iframe>
+    <h3>Dress Code: Sport Fino</h3>
+    <p>Blazer leve, vestido midi, salto médio.</p>
+  </section>
+
+  <section id="programacao">
+    <h2>Programação</h2>
+    <div class="timeline">
+      <div><strong>15h30</strong> - Chegada dos convidados</div>
+      <div><strong>16h00</strong> - Cerimônia</div>
+      <div><strong>17h00</strong> - Brinde & Fotos</div>
+      <div><strong>18h00</strong> - Recepção</div>
+    </div>
+  </section>
+
+  <section id="dicas">
+    <h2>Dicas para Convidados</h2>
+    <p><strong>Hospedagem:</strong> Hotéis e pousadas em Sumaré.</p>
+    <p><strong>Estacionamento:</strong> Vagas no Recanto do Januário e arredores.</p>
+    <p><strong>Dress Code:</strong> Sport fino (veja exemplos acima).</p>
+  </section>
+
+  <section id="presenca">
+    <h2>Confirmação de Presença</h2>
+    <form>
+      <input type="text" placeholder="Seu nome">
+      <input type="number" placeholder="Número de acompanhantes">
+      <button type="submit">Confirmar Presença</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Feito com carinho para os nossos convidados</p>
+    <h3>Trilha Sonora</h3>
+    <!-- Embed oficial do Spotify ou YouTube -->
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/COLOQUE_AQUI_ID_DA_MUSICA" width="300" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </footer>
+
+  <script>
+    // Contador regressivo
+    const dataCasamento = new Date("2027-08-07T15:30:00").getTime();
+    const contador = document.getElementById("contador");
+    setInterval(() => {
+      const agora = new Date().getTime();
+      const distancia = dataCasamento - agora;
+      const dias = Math.floor(distancia / (1000*60*60*24));
+      const horas = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
+      const minutos = Math.floor((distancia % (1000*60*60))/(1000*60));
+      contador.innerHTML = `Faltam ${dias} dias, ${horas} horas e ${minutos} minutos`;
+    }, 1000);
+  </script>
+</body>
+</html>
