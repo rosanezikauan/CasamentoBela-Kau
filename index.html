@@ -5,105 +5,61 @@
   <title>Casamento Bela & Kau</title>
   <style>
     body { margin:0; font-family:'Georgia', serif; background:#fff; color:#333; }
+    nav {
+      position:fixed; top:0; left:0; right:0;
+      background:#5a1f2d; color:white; padding:10px;
+      text-align:center; z-index:1000;
+    }
+    nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
     header {
       background:url('foto1.jpg') center/cover no-repeat;
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:white;
-      position:relative;
+      height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center; color:white; position:relative;
     }
-    header::after {
-      content:"";
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background:rgba(90,31,45,0.7); /* vinho translúcido */
-    }
-    header h1 {
-      font-size:4em;
-      z-index:2;
-      font-family:'Times New Roman', serif;
-      position:relative;
-    }
+    header::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(90,31,45,0.7); }
+    header h1 { font-size:4em; z-index:2; font-family:'Times New Roman', serif; position:relative; }
     header p { z-index:2; font-size:1.5em; position:relative; }
     #contador { font-size:1.5em; margin-top:20px; color:#d4af37; z-index:2; position:relative; }
-    section { padding:60px 20px; max-width:1000px; margin:auto; }
+    section { padding:80px 20px; max-width:1000px; margin:auto; }
     h2 { color:#5a1f2d; font-family:'Times New Roman', serif; font-size:2em; margin-bottom:20px; }
-    .polaroid {
-      background:white;
-      padding:10px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.3);
-      margin:20px auto;
-      display:block;
-      width:80%;
-      transform:rotate(-2deg);
-    }
-    .timeline {
-      position:relative;
-      margin:40px 0;
-      padding-left:40px;
-      border-left:3px solid #5a1f2d;
-    }
-    .timeline div {
-      margin-bottom:40px;
-      position:relative;
-    }
-    .timeline div::before {
-      content:"";
-      position:absolute;
-      left:-22px;
-      top:0;
-      width:20px;
-      height:20px;
-      background:#5a1f2d;
-      border-radius:50%;
-    }
-    footer { background:#5a1f2d; color:white; text-align:center; padding:40px 20px; }
-    form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:auto; }
-    input, button { padding:10px; font-size:1em; border-radius:5px; border:none; }
-    button { background:#d4af37; color:#5a1f2d; cursor:pointer; font-weight:bold; }
-    .data-section {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:40px;
-      flex-wrap:wrap;
-    }
-    .data-section .card {
-      flex:1;
-      background:#5a1f2d;
-      color:white;
-      padding:20px;
-      border-radius:8px;
-      text-align:center;
-    }
-    .data-section img {
-      max-width:100%;
-      border-radius:8px;
-    }
+    .polaroid { background:white; padding:10px; box-shadow:0 4px 8px rgba(0,0,0,0.3); margin:20px auto; display:block; width:300px; transform:rotate(-2deg); }
+    .data-section { display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; }
+    .data-section .card { flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center; }
+    .calendar { display:inline-block; border:2px solid #5a1f2d; border-radius:8px; padding:20px; background:#fff; color:#5a1f2d; font-family:'Georgia', serif; }
+    .calendar h3 { margin:0 0 10px; font-size:1.2em; }
+    .calendar table { border-collapse:collapse; width:100%; text-align:center; }
+    .calendar th { color:#5a1f2d; padding:5px; }
+    .calendar td { padding:8px; border-radius:4px; }
+    .calendar .highlight { background:#5a1f2d; color:white; font-weight:bold; }
+    @media (max-width:600px) { .polaroid { width:90%; transform:none; } }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#historia">Nossa História</a>
+    <a href="#evento">Local</a>
+    <a href="#programacao">Programação</a>
+    <a href="#dresscode">Dress Code</a>
+    <a href="#presenca">Presença</a>
+  </nav>
+
   <header>
-    <!-- Monograma sobreposto -->
     <img src="monograma.jpg" alt="Monograma Kauã & Isabela"
          style="position:absolute; top:40px; left:50%; transform:translateX(-50%);
                 max-width:180px; z-index:2; opacity:0.9;">
-    
     <h1>Kauã & Isabela</h1>
     <p>07/08/2027 · 15h30 · Recanto do Januário</p>
     <div id="contador"></div>
+    <div style="background:#ddd; border-radius:8px; overflow:hidden; margin-top:10px; width:80%; max-width:400px;">
+      <div id="progressBar" style="height:20px; background:#5a1f2d; width:0%;"></div>
+    </div>
   </header>
 
-  <!-- Seção de Data com calendário e desenho -->
   <section class="data-section">
     <div class="card">
       <h2>O GRANDE DIA</h2>
       <p>07 DE AGOSTO DE 2027 · 16H00</p>
-      <img src="calendario.png" alt="Calendário do casamento">
+      <div class="calendar" id="calendar"></div>
     </div>
     <div class="card">
       <img src="desenho.png" alt="Desenho do Recanto Januário">
@@ -111,54 +67,26 @@
     </div>
   </section>
 
-  <section class="historia">
+  <section id="historia" class="historia">
     <h2>Nossa História</h2>
-    <p>
-      Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio.
-      Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.
-    </p>
+    <p>Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio. Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.</p>
     <img src="foto2.jpg" class="polaroid">
-
-    <p>
-      A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem,
-      dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente,
-      a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa
-      tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.
-    </p>
+    <p>A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem, dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente, a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.</p>
     <img src="foto3.jpg" class="polaroid">
-
-    <p>
-      Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos.
-      Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza,
-      como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã,
-      só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.
-    </p>
-    <img src="foto4.jpg" class="polaroid">
-
-    <p>
-      E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar,
-      mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro.
-      Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez.
-      Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.
-    </p>
+    <p>Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos. Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza, como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã, só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.</p>
+    <img src="foto1.jpg" class="polaroid">
+    <p>E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar, mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro. Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez. Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.</p>
     <img src="foto5.jpg" class="polaroid">
-
-    <p>
-      E que sorte a nossa ter tido essa chance.
-    </p>
-    <img src="foto6.jpg" class="polaroid">
-    <img src="foto7.jpg" class="polaroid">
+    <p>E que sorte a nossa ter tido essa chance.</p>
+    <img src="foto4.jpg" class="polaroid">
   </section>
-
-  <section class="evento">
+  <section id="evento" class="evento">
     <h2>O Evento</h2>
-    <img src="recanto.jpg" class="polaroid">
-    <iframe src="https://www.google.com/maps/search/?api=1&query=Recanto%20do%20Janu%C3%A1rio%20Sumar%C3%A9%20SP" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    <h3>Dress Code: Sport Fino</h3>
-    <p>Blazer leve, vestido midi, salto médio.</p>
+    <img src="recanto.jpg">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
-  <section class="programacao">
+  <section id="programacao" class="programacao">
     <h2>Programação</h2>
     <div class="timeline">
       <div><strong>15h30</strong><br>Chegada dos convidados<br><em>Recepção com boas-vindas e aperitivos.</em></div>
@@ -168,37 +96,139 @@
     </div>
   </section>
 
-  <section class="dicas">
-    <h2>Dicas para Convidados</h2>
-    <p><strong>Dress Code:</strong> Sport fino (veja exemplos acima).</p>
+  <section id="dresscode" class="dresscode">
+    <h2>Dress Code</h2>
+    <p>Sport Fino — Blazer leve, vestido midi, salto médio.</p>
   </section>
 
-  <section class="presenca">
+  <section id="presenca" class="presenca">
     <h2>Confirmação de Presença</h2>
-    <form>
-      <input type="text" placeholder="Seu nome">
-      <input type="number" placeholder="Número de acompanhantes">
-      <button type="submit">Confirmar Presença</button>
-    </form>
-  </section>
+    <form id="presencaForm">
+      <input type="text" id="nome" placeholder="Seu nome">
+      <input type="number" id="acompanhantes" placeholder="Número de acompanhantes">
+      <button type="
+        <section id="evento" class="evento">
+  <h2>O Evento</h2>
+  <img src="recanto.jpg">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
 
-  <footer>
-    <p>Feito com carinho para os nossos convidados</p>
-    <h3>Trilha Sonora</h3>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Vc3bzFxXdrABa2DxgyCMT" width="300" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-  </footer>
+<section id="programacao" class="programacao">
+  <h2>Programação</h2>
+  <div class="timeline">
+    <div><strong>15h30</strong><br>Chegada dos convidados<br><em>Recepção com boas-vindas e aperitivos.</em></div>
+    <div><strong>16h00</strong><br>Cerimônia<br><em>O sim que vai mudar tudo. Emoção e celebração.</em></div>
+    <div><strong>17h00</strong><br>Brinde & Fotos<br><em>Brinde aos noivos e registros desse momento.</em></div>
+    <div><strong>18h00</strong><br>Recepção<br><em>Jantar, música e muita dança para fechar a noite.</em></div>
+  </div>
+</section>
 
-  <script>
-    const dataCasamento = new Date("2027-08-07T15:30:00").getTime();
-    const contador = document.getElementById("contador");
-    setInterval(() => {
-      const agora = new Date().getTime();
-      const distancia = dataCasamento - agora;
-      const dias = Math.floor(distancia / (1000*60*60*24));
-      const horas = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
-      const minutos = Math.floor((distancia % (1000*60*60))/(1000*60));
-      contador.innerHTML = `Faltam ${dias} dias, ${horas} horas e ${minutos} minutos`;
-    }, 1000);
-  </script>
+<section id="dresscode" class="dresscode">
+  <h2>Dress Code</h2>
+  <p>Sport Fino — Blazer leve, vestido midi, salto médio.</p>
+</section>
+
+<section id="presenca" class="presenca">
+  <h2>Confirmação de Presença</h2>
+  <form id="presencaForm">
+    <input type="text" id="nome" placeholder="Seu nome">
+    <input type="number" id="acompanhantes" placeholder="Número de acompanhantes">
+    <button type="submit">Confirmar Presença</button>
+  </form>
+</section>
+
+<footer>
+  <p>Feito com carinho para os nossos convidados</p>
+  <h3>Trilha Sonora</h3>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Vc3bzFxXdrABa2DxgyCMT" width="300" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script>
+  // Scroll suave
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Botão voltar ao topo
+  const topBtn = document.getElementById("topBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+  topBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Validação do formulário
+  document.getElementById("presencaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nome = document.getElementById("nome").value.trim();
+    const acomp = document.getElementById("acompanhantes").value.trim();
+    if (!nome) {
+      alert("Por favor, insira seu nome.");
+      return;
+    }
+    alert(`Obrigado, ${nome}! Sua presença foi confirmada com ${acomp || 0} acompanhante(s).`);
+  });
+
+  // Contador com barra de progresso
+  const dataCasamento = new Date("2027-08-07T15:30:00").getTime();
+  const inicio = new Date().getTime();
+  const total = dataCasamento - inicio;
+
+  function atualizarContador() {
+    const agora = new Date().getTime();
+    const distancia = dataCasamento - agora;
+
+    if (distancia <= 0) {
+      document.getElementById("contador").innerHTML = "O grande dia chegou!";
+      document.getElementById("progressBar").style.width = "100%";
+      clearInterval(intervalo);
+      return;
+    }
+
+    const dias = Math.floor(distancia / (1000*60*60*24));
+    const horas = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
+    const minutos = Math.floor((distancia % (1000*60*60))/(1000*60));
+    const segundos = Math.floor((distancia % (1000*60))/1000);
+
+    document.getElementById("contador").innerHTML = 
+      `Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+
+    const progresso = 100 - (distancia / total * 100);
+    document.getElementById("progressBar").style.width = progresso + "%";
+  }
+
+  const intervalo = setInterval(atualizarContador, 1000);
+  atualizarContador();
+
+  // Calendário dinâmico
+  function gerarCalendario(mes, ano, diaEvento) {
+    const diasSemana = ["D","S","T","Q","Q","S","S"];
+    const data = new Date(ano, mes-1, 1);
+    const ultimoDia = new Date(ano, mes, 0).getDate();
+    let html = `<h3>${data.toLocaleString('pt-BR',{month:'long'})} ${ano}</h3><table><tr>`;
+    diasSemana.forEach(d=> html += `<th>${d}</th>`);
+    html += "</tr><tr>";
+    for(let i=0;i<data.getDay();i++){ html += "<td></td>"; }
+    for(let dia=1; dia<=ultimoDia; dia++){
+      const classe = dia===diaEvento ? "highlight" : "";
+      html += `<td class="${classe}">${dia}</td>`;
+      if((dia+data.getDay())%7===0) html += "</tr><tr>";
+    }
+    html += "</tr></table>";
+    document.getElementById("calendar").innerHTML = html;
+  }
+  gerarCalendario(8,2027,7);
+</script>
 </body>
 </html>
+
