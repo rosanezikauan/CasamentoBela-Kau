@@ -1,286 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Casamento Bela & Kau</title>
-  <style>
-    body { margin:0; font-family:'Georgia', serif; background:#fff; color:#333; }
-    nav {
-      position:fixed; top:0; left:0; right:0;
-      background:#5a1f2d; color:white; padding:10px;
-      text-align:center; z-index:1000;
-    }
-    nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
-    header {
-      background:url('foto2.jpg') center/cover no-repeat;
-      height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
-      text-align:center; color:white; position:relative;
-    }
-    header::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(90,31,45,0.7); }
-    header h1 { font-size:4em; z-index:2; font-family:'Times New Roman', serif; position:relative; }
-    header p { z-index:2; font-size:1.5em; position:relative; }
-    #contador { font-size:1.5em; margin-top:20px; color:#d4af37; z-index:2; position:relative; }
-    section { padding:80px 20px; max-width:1000px; margin:auto; }
-    h2 { color:#5a1f2d; font-family:'Times New Roman', serif; font-size:2em; margin-bottom:20px; }
-    .polaroid { background:white; padding:10px; box-shadow:0 4px 8px rgba(0,0,0,0.3); margin:20px auto; display:block; width:300px; transform:rotate(-2deg); }
-    .data-section { display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; }
-    .data-section .card { flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center; }
-    .calendar { display:inline-block; border:2px solid #5a1f2d; border-radius:8px; padding:20px; background:#fff; color:#5a1f2d; font-family:'Georgia', serif; }
-    .calendar h3 { margin:0 0 10px; font-size:1.2em; }
-    .calendar table { border-collapse:collapse; width:100%; text-align:center; }
-    .calendar th { color:#5a1f2d; padding:5px; }
-    .calendar td { padding:8px; border-radius:4px; }
-    .calendar .highlight { background:#5a1f2d; color:white; font-weight:bold; }
-    @media (max-width:600px) { .polaroid { width:90%; transform:none; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casamento Bela & Kau</title>
+<meta name="description" content="Kauã & Isabela — 07 de agosto de 2027, Recanto do Januário, Sumaré/SP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#641823;--wine-dark:#3f0f17;--wine-soft:#7d2937;--green:#405640;--green-dark:#26392c;--cream:#fbf8f1;--paper:#f1eadf;--white:#fffdf8;--ink:#302b28;--line:#d8ccbb;--gold:#b59b68}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,Arial,sans-serif;line-height:1.7}img{max-width:100%}a{color:inherit}h1,h2,h3,p{margin-top:0}.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.nav{position:fixed;z-index:100;top:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:2px;padding:8px 10px;background:rgba(251,248,241,.93);backdrop-filter:blur(14px);border:1px solid rgba(100,24,35,.14);border-radius:999px;box-shadow:0 8px 30px rgba(50,30,20,.10);white-space:nowrap}.nav a{font-size:9px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:7px 9px}.nav a:hover{color:var(--wine)}.nav .nav-monogram{font-family:"Cormorant Garamond",serif;color:var(--wine);font-size:24px;line-height:1;padding:0 9px;letter-spacing:-.08em}.nav .nav-monogram span{font-size:.72em;font-style:italic;margin:0 2px}
+.hero{min-height:100vh;position:relative;display:grid;place-items:center;overflow:hidden;background:var(--wine);color:#fff9f1}.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 15%,rgba(255,255,255,.08),transparent 22%),radial-gradient(circle at 88% 75%,rgba(255,255,255,.06),transparent 25%),linear-gradient(135deg,var(--wine-dark),var(--wine) 55%,#7b2936)}.hero::after{content:"";position:absolute;inset:22px;border:1px solid rgba(250,242,228,.25);pointer-events:none}.botanical{position:absolute;color:#f7e9d7;opacity:.20;font-family:"Cormorant Garamond",serif;line-height:.75;pointer-events:none}.botanical.a{left:-20px;top:6%;font-size:220px;transform:rotate(-22deg)}.botanical.b{right:-18px;bottom:5%;font-size:250px;transform:rotate(18deg)}.botanical.c{right:12%;top:12%;font-size:90px;transform:rotate(28deg);opacity:.13}.hero-content{position:relative;z-index:2;text-align:center;width:min(900px,90%);padding:120px 20px 80px}.monogram{position:relative;width:132px;height:132px;margin:0 auto 28px;border:1px solid rgba(255,249,241,.68);border-radius:50%}.monogram:before{content:"";position:absolute;width:158px;height:158px;left:-14px;top:-14px;border:1px solid rgba(255,249,241,.14);border-radius:50%}.mono-k,.mono-i{position:absolute;font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1}.mono-k{left:27px;top:23px;font-size:77px;letter-spacing:-.08em}.mono-i{left:58px;top:28px;font-size:75px;font-style:italic;letter-spacing:-.08em}.mono-amp{position:absolute;left:57px;top:61px;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-style:italic;opacity:.9}.mono-leaf{position:absolute;bottom:13px;left:54px;font-size:18px;transform:rotate(-25deg)}.kicker{font-size:10px;letter-spacing:.3em;text-transform:uppercase}.hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(70px,12vw,145px);line-height:.72;margin:28px 0 35px}.hero h1 span{display:block;font-size:.48em;font-style:italic;line-height:1;margin:18px}.hero .date{font-family:"Cormorant Garamond",serif;font-size:23px;letter-spacing:.15em}.welcome{max-width:690px;margin:35px auto 0;font-family:"Cormorant Garamond",serif;font-size:clamp(23px,3vw,32px);line-height:1.3}.countdown{margin:28px auto 0;font-family:"Cormorant Garamond",serif;font-size:20px;letter-spacing:.04em}.progress{height:2px;background:rgba(255,255,255,.18);width:min(380px,75%);margin:14px auto 0}.progress span{display:block;height:100%;background:#e7d5b3;width:0}.scroll{margin-top:48px;font-size:9px;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
+.section{position:relative;padding:105px 22px;overflow:hidden}.section-inner{width:min(1060px,100%);margin:auto}.label{display:flex;gap:14px;align-items:center;color:var(--wine);font-size:9px;font-weight:600;letter-spacing:.27em;text-transform:uppercase;margin-bottom:15px}.label:after{content:"";height:1px;width:70px;background:var(--wine);opacity:.35}.title{font-family:"Cormorant Garamond",serif;color:var(--wine-dark);font-size:clamp(48px,7vw,78px);font-weight:500;line-height:.95;margin-bottom:48px}.flower{position:absolute;color:var(--wine);opacity:.12;font-family:"Cormorant Garamond",serif;pointer-events:none}.flower.one{right:-30px;top:45px;font-size:190px;transform:rotate(15deg)}.flower.two{left:-25px;bottom:20px;font-size:170px;transform:rotate(-20deg)}
+/* SAVE THE DATE */
+.save-date{background:var(--paper);padding-top:85px;padding-bottom:90px}.save-wrap{display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap}.save-box{position:relative;background:var(--wine);color:white;padding:30px 32px;border-radius:10px;text-align:center;width:min(430px,100%);border:8px solid white;outline:3px solid var(--wine);box-shadow:0 18px 40px rgba(45,20,20,.15)}.save-box:before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.25);pointer-events:none}.save-box h2{font-family:"Cormorant Garamond",serif;font-size:43px;font-weight:500;letter-spacing:.04em;margin-bottom:5px}.save-box .subtitle{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#eadcc4;margin-bottom:5px}.save-box .date-big{font-family:"Cormorant Garamond",serif;font-size:23px;letter-spacing:.08em;margin-bottom:20px}.save-calendar{border-collapse:collapse;width:100%;font-size:14px;table-layout:fixed}.save-calendar th{font-size:10px;letter-spacing:.1em;font-weight:500;color:#eadcc4;padding:6px}.save-calendar td{padding:7px;border-radius:5px}.save-calendar .highlight{background:var(--gold);color:var(--wine-dark);font-weight:700}.save-art{width:min(390px,90%);padding:16px;background:white;border:1px solid rgba(100,24,35,.18);box-shadow:0 18px 40px rgba(50,30,20,.12);transform:rotate(2deg)}.save-art img{display:block;width:100%;height:330px;object-fit:contain;background:#fff}.save-art figcaption{text-align:center;color:var(--wine);font-family:"Cormorant Garamond",serif;font-size:20px;padding:12px 5px 4px}
+/* STORY */
+.story-layout{display:grid;grid-template-columns:minmax(0,700px) 280px;gap:70px;align-items:start}.story-text{font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;line-height:1.7}.story-text p{margin-bottom:28px}.story-text .lead{font-size:31px;line-height:1.25;color:var(--wine);margin-bottom:42px}.story-text .ending{color:var(--green-dark);font-size:30px;font-weight:600}.story-side{position:relative;min-height:850px}.story-side .sticky-card{position:sticky;top:105px}.polaroid{margin:0 auto;background:#fffdf8;padding:14px 14px 45px;width:260px;box-shadow:0 20px 45px rgba(40,25,17,.18);transform:rotate(3deg)}.polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.polaroid figcaption{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.15;text-align:center;margin-top:14px;color:#5a5149}.sticky-note{margin:55px auto 0;width:230px;color:var(--green-dark);font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.3;text-align:center}.sticky-note:before{content:"❦";display:block;color:var(--wine);font-size:28px;margin-bottom:8px}.wide-photo{margin:55px 0}.wide-photo img{width:100%;height:450px;object-fit:cover;display:block}.quote{background:var(--green-dark);color:#f8f2e8;text-align:center;padding:95px 22px;position:relative}.quote p{max-width:820px;margin:auto;font-family:"Cormorant Garamond",serif;font-size:clamp(30px,4vw,48px);line-height:1.15}.quote .orn{color:var(--gold);font-size:30px;margin-top:18px}
+/* EVENT / VENUE */
+.event{background:var(--paper);padding-bottom:0}.event-grid{display:grid;grid-template-columns:1fr 1fr}.event-photo{min-height:540px;background:center/cover no-repeat}.event-info{padding:70px clamp(28px,6vw,90px);display:flex;flex-direction:column;justify-content:center}.event-info h2{font-family:"Cormorant Garamond",serif;font-size:68px;line-height:.9;font-weight:500;color:var(--wine);margin:18px 0 25px}.event-info .time{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-dark);font-weight:600}.event-info p{max-width:470px}.btn{display:inline-flex;width:max-content;padding:13px 20px;background:var(--wine);color:#fff;text-decoration:none;font-size:9px;letter-spacing:.13em;text-transform:uppercase;margin-top:18px}.btn:hover{background:var(--wine-dark)}.venue-gallery{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:18px}.venue-gallery img{width:100%;height:380px;object-fit:cover;display:block}.venue-art{background:var(--wine);padding:15px}.map-wrap{padding-top:65px;padding-bottom:90px}.map-wrap h3{font-family:"Cormorant Garamond",serif;font-size:38px;color:var(--wine-dark);font-weight:500}.map{width:100%;height:360px;border:0;display:block;filter:saturate(.7)}
+/* PROGRAM */
+.program{background:white}.timeline{position:relative;max-width:850px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:18px}.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line);transform:translateX(-50%)}.timeline-item{position:relative;background:var(--cream);padding:28px 30px;border:1px solid var(--line)}.timeline-item:nth-child(odd){margin-right:35px}.timeline-item:nth-child(even){margin-left:35px}.timeline-item .time{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--wine);line-height:1}.timeline-item h3{font-family:"Cormorant Garamond",serif;font-size:28px;color:var(--green-dark);margin:8px 0 5px}.timeline-item p{font-size:13px;margin:0;color:#5d5650}
+/* DRESS */
+.dress{background:var(--green-dark);color:#f8f2e8;text-align:center}.dress .label{justify-content:center;color:#dfcfaf}.dress .label:after{background:#dfcfaf}.dress .title{color:#fff9ef}.dress-card{max-width:700px;margin:auto;border:1px solid rgba(255,255,255,.22);padding:48px 35px;position:relative}.dress-card:before,.dress-card:after{content:"❦";position:absolute;color:var(--gold);font-size:27px}.dress-card:before{left:20px;top:16px}.dress-card:after{right:20px;bottom:10px}.dress-icon{color:var(--gold);font-size:30px}.dress-card h3{font-family:"Cormorant Garamond",serif;font-size:48px;font-weight:500;margin:8px 0}.dress-card p{max-width:570px;margin:auto;color:#e9e0d2}
+/* RSVP */
+.rsvp{background:var(--cream)}.rsvp-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.rsvp-intro{font-family:"Cormorant Garamond",serif;font-size:26px;line-height:1.35;max-width:520px}.rsvp-form{background:white;padding:35px;border:1px solid var(--line);box-shadow:0 16px 35px rgba(40,25,17,.07)}.field{margin-bottom:18px}.field label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--green-dark);font-weight:600;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;font:inherit;font-size:13px;padding:12px 13px;border:1px solid var(--line);background:#fffdf9;color:var(--ink);outline:none}.field textarea{min-height:95px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--wine)}.submit{width:100%;border:0;background:var(--wine);color:white;padding:14px;font:600 10px Montserrat,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}.submit:hover{background:var(--wine-dark)}
+/* FINAL */
+.final{background:var(--wine);color:#fff9f1;text-align:center;padding:110px 22px;position:relative;overflow:hidden}.final:before{content:"";position:absolute;inset:22px;border:1px solid rgba(255,255,255,.18)}.final .final-orn{font-size:32px;color:var(--gold)}.final h2{font-family:"Cormorant Garamond",serif;font-size:clamp(55px,8vw,95px);font-weight:500;line-height:.9;margin:22px 0}.final p{font-family:"Cormorant Garamond",serif;font-size:27px;max-width:700px;margin:0 auto 35px;line-height:1.3}.final .small{font-family:Montserrat,Arial,sans-serif;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#e8d8bf}.footer{background:var(--wine-dark);color:#f8f0e4;text-align:center;padding:32px 20px;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.top{position:fixed;right:20px;bottom:20px;width:40px;height:40px;border-radius:50%;border:1px solid var(--wine);background:rgba(255,255,255,.92);color:var(--wine);display:none;z-index:90;cursor:pointer}
+@media(max-width:850px){.nav{max-width:94%;overflow:auto}.nav a{padding:7px 6px;font-size:8px}.story-layout,.rsvp-grid{grid-template-columns:1fr}.story-side{min-height:auto}.story-side .sticky-card{position:relative;top:auto;margin-top:40px}.event-grid{grid-template-columns:1fr}.event-photo{min-height:360px}.timeline{grid-template-columns:1fr}.timeline:before{display:none}.timeline-item:nth-child(odd),.timeline-item:nth-child(even){margin:0}.venue-gallery{grid-template-columns:1fr}.venue-gallery img{height:300px}}
+@media(max-width:600px){.hero h1{font-size:70px}.hero .date{font-size:17px}.section{padding:75px 18px}.save-wrap{gap:28px}.save-box{padding:25px 20px}.save-art img{height:250px}.story-text{font-size:19px}.story-text .lead{font-size:27px}.wide-photo img{height:300px}.event-info h2{font-size:58px}.map{height:300px}.dress-card{padding:42px 22px}.rsvp-form{padding:25px 20px}.final p{font-size:23px}}
+</style>
 </head>
 <body>
-  <nav>
-    <a href="#historia">Nossa História</a>
-    <a href="#evento">Local</a>
-    <a href="#programacao">Programação</a>
-    <a href="#dresscode">Dress Code</a>
-    <a href="#presenca">Presença</a>
-  </nav>
+<nav class="nav" aria-label="Navegação principal">
+  <a href="#historia">História</a><a href="#evento">Evento</a><a href="#programacao">Programação</a>
+  <div class="nav-monogram">K<span>&amp;</span>I</div>
+  <a href="#dresscode">Dress code</a><a href="#presenca">Presença</a>
+</nav>
 
-  <header>
-    <img src="monograma.jpg" alt="Monograma Kauã & Isabela"
-         style="position:absolute; top:40px; left:50%; transform:translateX(-50%);
-                max-width:180px; z-index:2; opacity:0.9;">
-    <h1>Kauã & Isabela</h1>
-    <p>07/08/2027 · 15h30 · Recanto do Januário</p>
-    <div id="contador"></div>
-    <div style="background:#ddd; border-radius:8px; overflow:hidden; margin-top:10px; width:80%; max-width:400px;">
-      <div id="progressBar" style="height:20px; background:#5a1f2d; width:0%;"></div>
+<header class="hero">
+  <div class="botanical a">❧</div><div class="botanical b">❧</div><div class="botanical c">❦</div>
+  <div class="hero-content">
+    <div class="kicker">O amor nos trouxe até aqui</div>
+    <div class="monogram" aria-label="Monograma Kauã e Isabela"><span class="mono-k">K</span><span class="mono-i">I</span><span class="mono-amp">&amp;</span><span class="mono-leaf">❦</span></div>
+    <h1>Kauã <span>&amp;</span> Isabela</h1>
+    <div class="date">07 DE AGOSTO DE 2027 · RECANTO DO JANUÁRIO</div>
+    <p class="welcome">Vocês fazem parte do caminho.<br>Sejam bem-vindos à celebração da nossa história.</p>
+    <div id="contador" class="countdown"></div><div class="progress"><span id="progressBar"></span></div>
+    <div class="scroll">role para descobrir ↓</div>
+  </div>
+</header>
+
+<section class="section save-date" id="save-date">
+  <div class="section-inner">
+    <div class="label">Marque no calendário</div>
+    <div class="save-wrap">
+      <div class="save-box">
+        <h2>Save the Date</h2>
+        <div class="subtitle">O grande dia</div>
+        <div class="date-big">07 DE AGOSTO DE 2027 · 16H00</div>
+        <table class="save-calendar" aria-label="Calendário de agosto de 2027">
+          <tr><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr>
+          <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>8</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="highlight">7</td></tr>
+          <tr><td>15</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+          <tr><td>22</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+          <tr><td>29</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+          <tr><td></td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+      <figure class="save-art">
+        <img src="desenho.png" alt="Desenho do Recanto do Januário" onerror="this.onerror=null;this.src='ilustracao-recanto.png';">
+        <figcaption>Um dia para guardar para sempre.</figcaption>
+      </figure>
     </div>
-  </header>
-
-<section class="save-date" style="display:flex; justify-content:center; margin-top:60px;">
-  <div style="background:#5a1f2d; color:white; padding:30px; border-radius:12px; text-align:center; max-width:400px; border:4px solid white;">
-    
-    <!-- Título -->
-    <h2 style="font-family:'Playfair Display', serif; font-size:2em; margin-bottom:20px; letter-spacing:2px;">
-      Save the Date
-    </h2>
-
-    <!-- Calendário compacto -->
-    <h3 style="font-size:1.2em; margin-bottom:10px;">O GRANDE DIA</h3>
-    <p style="font-size:1em; margin-bottom:15px;">07 DE AGOSTO DE 2027 · 15H30</p>
-    <table style="border-collapse:collapse; width:100%; text-align:center; color:white; font-size:1em;">
-      <tr>
-        <th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th>
-      </tr>
-      <tr>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
-      </tr>
-      <tr>
-        <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
-        <td style="background:#d4af37; color:#5a1f2d; font-weight:bold; border-radius:4px;">7</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
-      </tr>
-      <tr>
-        <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
-      </tr>
-      <tr>
-        <td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
-      </tr>
-      <tr>
-        <td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td>
-      </tr>
-    </table>
   </div>
 </section>
 
-<section id="historia" class="historia" 
-         style="font-family:'Playfair Display', serif; 
-                line-height:1.8; 
-                max-width:800px; 
-                margin:auto; 
-                text-align:justify; 
-                font-size:1.1em; 
-                color:#333;">
-  <h2 style="text-align:center; font-size:2.4em; margin-bottom:30px; color:#5a1f2d;">
-    Nossa História
-  </h2>
-
-  <p style="margin-bottom:25px; text-indent:2em;">
-    Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio.
-    Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.
-  </p>
-  <img src="foto4.jpg" class="polaroid">
-
-  <p style="margin-bottom:25px; text-indent:2em;">
-    A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem,
-    dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente,
-    a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa
-    tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.
-  </p>
-  <img src="foto3.jpg" class="polaroid">
-
-  <p style="margin-bottom:25px; text-indent:2em;">
-    Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos.
-    Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza,
-    como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã,
-    só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.
-  </p>
-  <img src="foto1.jpg" class="polaroid">
-
-  <p style="margin-bottom:25px; text-indent:2em;">
-    E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar,
-    mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro.
-    Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez.
-    Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.
-  </p>
-  <img src="foto5.jpg" class="polaroid">
-
-  <p style="margin-bottom:25px; text-indent:2em;">
-    E que sorte a nossa ter tido essa chance.
-  </p>
-
-</section>
-
-
-<section class="data-section" style="display:flex; gap:40px; justify-content:center; align-items:center; flex-wrap:wrap;">
-  <div class="card" style="flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center;">
-    <h2 style="font-family:'Playfair Display', serif;">O GRANDE DIA</h2>
-    <p style="font-size:1.2em;">07 DE AGOSTO DE 2027 · 16H00</p>
-    <div class="calendar" id="calendar"></div>
-  </div>
-  <div class="card" style="flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center;">
-    <img src="desenho.png" alt="Desenho do Recanto Januário" style="max-width:250px; margin:auto; display:block;">
-    <p style="margin-top:10px; font-size:1.2em;">08.07.27</p>
-    <p>Recanto Januário — Sumaré, SP</p>
+<section class="section" id="historia">
+  <div class="flower one">❧</div><div class="section-inner">
+    <div class="label">De onde tudo começou</div><h2 class="title">Nossa História</h2>
+    <div class="story-layout">
+      <div class="story-text">
+        <p class="lead">Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio.</p>
+        <p>Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.</p>
+        <figure class="polaroid" style="display:none"><img src="foto-01.jpg" alt="Memória de Kauã e Isabela"><figcaption>Uma das primeiras lembranças.</figcaption></figure>
+        <p>A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem, dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente, a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.</p>
+        <div class="wide-photo"><img src="foto-02.jpg" alt="Kauã e Isabela"></div>
+        <p>Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos. Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza, como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã, só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.</p>
+        <div class="wide-photo"><img src="foto-03.jpg" alt="Momento especial do casal"></div>
+        <p>E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar, mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro. Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez. Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.</p>
+        <p class="ending">E que sorte a nossa ter tido essa chance.</p>
+      </div>
+      <aside class="story-side"><div class="sticky-card"><figure class="polaroid"><img src="foto-01.jpg" alt="Kauã e Isabela"><figcaption>De alguma forma, a vida já estava nos aproximando.</figcaption></figure><div class="sticky-note">Algumas histórias precisam de tempo para encontrar o seu momento.</div></div></aside>
+    </div>
   </div>
 </section>
 
-<section id="programacao" class="programacao">
-  <h2 style="font-family:'Playfair Display', serif;">Programação</h2>
-  <div class="timeline">
-    <div><strong>15h30</strong><br><em>Boas-vindas</em><br>Chegada dos convidados com aperitivos e música leve.</div>
-    <div><strong>16h00</strong><br><em>Cerimônia</em><br>O momento mais esperado: o sim que muda tudo.</div>
-    <div><strong>17h00</strong><br><em>Brinde & Fotos</em><br>Um brinde ao amor e registros que ficarão para sempre.</div>
-    <div><strong>18h00</strong><br><em>Jantar & Festa</em><br>Sabores, música e dança para celebrar até o último minuto.</div>
+<section class="quote"><p>“Mal podemos esperar para celebrar esse dia com vocês.”</p><div class="orn">❦</div></section>
+
+<section class="section event" id="evento">
+  <div class="section-inner"><div class="label">Onde vamos celebrar</div><h2 class="title">O Evento</h2></div>
+  <div class="event-grid">
+    <div class="event-photo" style="background-image:url('recanto-noite.jpg')"></div>
+    <div class="event-info">
+      <div class="time">07 de agosto de 2027 · chegada a partir das 15h30</div>
+      <h2>Recanto<br>do Januário</h2>
+      <p><strong>Sumaré · São Paulo</strong></p>
+      <p>Queremos que vocês cheguem com calma, aproveitem o welcome drink e vivam cada momento com a gente.</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Recanto%20do%20Janu%C3%A1rio%2C%20Sumar%C3%A9%2C%20SP">Abrir no Google Maps</a>
+    </div>
+  </div>
+  <div class="section-inner venue-gallery">
+    <img src="recanto-dia.jpg" alt="Recanto do Januário durante o dia"><div class="venue-art"><img src="ilustracao-recanto.png" alt="Ilustração do Recanto do Januário"></div>
+  </div>
+  <div class="section-inner map-wrap">
+    <div class="label">Como chegar</div><h3>Encontre o Recanto do Januário</h3>
+    <iframe class="map" title="Mapa do Recanto do Januário" loading="lazy" src="https://www.google.com/maps?q=Recanto%20do%20Janu%C3%A1rio%2C%20Sumar%C3%A9%2C%20SP&output=embed"></iframe>
   </div>
 </section>
 
-
-<section id="dresscode" class="dresscode" style="text-align:center;">
-  <h2 style="font-family:'Playfair Display', serif;">Dress Code</h2>
-  <p style="font-size:1.2em;">Sport Fino</p>
-  <p style="max-width:600px; margin:auto;">
-    Elegância leve e descontraída: vestidos midi, saltos médios, blazers ou camisas bem cortadas.
-  </p>
+<section class="section program" id="programacao">
+  <div class="flower two">❦</div><div class="section-inner">
+    <div class="label">Para viver o dia inteiro com a gente</div><h2 class="title">Programação</h2>
+    <div class="timeline">
+      <article class="timeline-item"><div class="time">15h30</div><h3>Boas-vindas</h3><p>Chegada dos convidados, welcome drink, aperitivos e música leve.</p></article>
+      <article class="timeline-item"><div class="time">16h00</div><h3>Cerimônia</h3><p>O momento mais esperado: o sim que muda tudo.</p></article>
+      <article class="timeline-item"><div class="time">17h00</div><h3>Brinde &amp; fotos</h3><p>Um brinde ao amor e registros que ficarão para sempre.</p></article>
+      <article class="timeline-item"><div class="time">18h00</div><h3>Jantar &amp; festa</h3><p>Sabores, música e dança para celebrar até o último minuto.</p></article>
+    </div>
+  </div>
 </section>
 
-
-<section id="presenca" class="presenca" style="text-align:center;">
-  <h2 style="font-family:'Playfair Display', serif;">Confirmação de Presença</h2>
-  <form id="presencaForm" style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:10px;">
-    <input type="text" id="nome" placeholder="Seu nome">
-    <input type="number" id="acompanhantes" placeholder="Número de acompanhantes">
-    <button type="submit">Confirmar Presença</button>
-  </form>
+<section class="section dress" id="dresscode">
+  <div class="section-inner"><div class="label">Para o nosso dia</div><h2 class="title">Dress Code</h2>
+    <div class="dress-card"><div class="dress-icon">✦</div><h3>Sport fino</h3><p>Elegância leve e descontraída. Vestidos midi, saltos médios, blazers ou camisas bem cortadas são algumas possibilidades. O mais importante é que vocês se sintam confortáveis para celebrar com a gente.</p></div>
+  </div>
 </section>
 
-<footer style="background:#5a1f2d; color:white; text-align:center; padding:60px 20px; font-family:'Playfair Display', serif;">
-  <p style="font-size:1.3em; font-style:italic; margin-bottom:25px;">
-    Feito com carinho para celebrar cada detalhe do nosso grande dia
-  </p>
-  <h3 style="margin-bottom:15px;">Trilha Sonora</h3>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Vc3bzFxXdrABa2DxgyCMT" 
-          width="300" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-</footer>
+<section class="section" id="presenca">
+  <div class="section-inner"><div class="label">Sua presença faz parte da nossa história</div><div class="rsvp-grid">
+    <div><h2 class="title">Confirme sua presença</h2><p class="rsvp-intro">Estamos preparando esse dia com muito carinho. Conta pra gente se você estará conosco para celebrar.</p></div>
+    <form class="rsvp-form" id="presencaForm">
+      <div class="field"><label for="nome">Nome</label><input id="nome" required type="text" placeholder="Seu nome"></div>
+      <div class="field"><label for="vai">Você vem?</label><select id="vai" required><option value="">Selecione</option><option>Sim, estarei presente!</option><option>Infelizmente não poderei ir</option></select></div>
+      <div class="field"><label for="acomp">Número de convidados</label><select id="acomp"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+      <div class="field"><label for="msg">Mensagem para os noivos</label><textarea id="msg" placeholder="Deixe uma mensagem..."></textarea></div>
+      <button class="submit" type="submit">Confirmar presença</button>
+    </form>
+  </div></div>
+</section>
 
-
-<button id="topBtn">↑</button>
-
+<section class="final">
+  <div class="final-orn">❦</div><h2>Kauã &amp; Isabela</h2><p>O amor nos trouxe até aqui.<br>Agora queremos viver esse próximo capítulo ao lado de vocês.</p><div class="small">07 · 08 · 2027</div>
+</section>
+<footer class="footer">Casamento Bela &amp; Kau · feito com carinho para celebrar o nosso grande dia</footer>
+<button id="topBtn" class="top" aria-label="Voltar ao topo">↑</button>
 <script>
-  // Scroll suave
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Botão voltar ao topo
-  const topBtn = document.getElementById("topBtn");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      topBtn.style.display = "block";
-    } else {
-      topBtn.style.display = "none";
-    }
-  };
-  topBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Validação do formulário
-  document.getElementById("presencaForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const nome = document.getElementById("nome").value.trim();
-    const acomp = document.getElementById("acompanhantes").value.trim();
-    if (!nome) {
-      alert("Por favor, insira seu nome.");
-      return;
-    }
-    alert(`Obrigado, ${nome}! Sua presença foi confirmada com ${acomp || 0} acompanhante(s).`);
-  });
-
-  // Contador com barra de progresso
-  const dataCasamento = new Date("2027-08-07T15:30:00").getTime();
-  const inicio = new Date().getTime();
-  const total = dataCasamento - inicio;
-
-  function atualizarContador() {
-    const agora = new Date().getTime();
-    const distancia = dataCasamento - agora;
-
-    if (distancia <= 0) {
-      document.getElementById("contador").innerHTML = "O grande dia chegou!";
-      document.getElementById("progressBar").style.width = "100%";
-      clearInterval(intervalo);
-      return;
-    }
-
-    const dias = Math.floor(distancia / (1000*60*60*24));
-    const horas = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
-    const minutos = Math.floor((distancia % (1000*60*60))/(1000*60));
-    const segundos = Math.floor((distancia % (1000*60))/1000);
-
-    document.getElementById("contador").innerHTML = 
-      `Faltam ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
-
-    const progresso = 100 - (distancia / total * 100);
-    document.getElementById("progressBar").style.width = progresso + "%";
-  }
-
-  const intervalo = setInterval(atualizarContador, 1000);
-  atualizarContador();
-
-  // Calendário dinâmico
-  function gerarCalendario(mes, ano, diaEvento) {
-    const diasSemana = ["D","S","T","Q","Q","S","S"];
-    const data = new Date(ano, mes-1, 1);
-    const ultimoDia = new Date(ano, mes, 0).getDate();
-    let html = `<h3>${data.toLocaleString('pt-BR',{month:'long'})} ${ano}</h3><table><tr>`;
-    diasSemana.forEach(d=> html += `<th>${d}</th>`);
-    html += "</tr><tr>";
-    for(let i=0;i<data.getDay();i++){ html += "<td></td>"; }
-    for(let dia=1; dia<=ultimoDia; dia++){
-      const classe = dia===diaEvento ? "highlight" : "";
-      html += `<td class="${classe}">${dia}</td>`;
-      if((dia+data.getDay())%7===0) html += "</tr><tr>";
-    }
-    html += "</tr></table>";
-    document.getElementById("calendar").innerHTML = html;
-  }
-  gerarCalendario(8,2027,7);
+const dataCasamento=new Date('2027-08-07T16:00:00-03:00').getTime();
+const inicio=new Date().getTime();const total=dataCasamento-inicio;
+function atualizarContador(){const agora=Date.now(),d=dataCasamento-agora;const el=document.getElementById('contador'),bar=document.getElementById('progressBar');if(d<=0){el.textContent='O grande dia chegou!';bar.style.width='100%';return}const dias=Math.floor(d/86400000),horas=Math.floor(d%86400000/3600000),min=Math.floor(d%3600000/60000),seg=Math.floor(d%60000/1000);el.textContent=`Faltam ${dias} dias, ${horas} horas, ${min} minutos e ${seg} segundos`;bar.style.width=Math.max(0,Math.min(100,100-d/total*100))+'%'}setInterval(atualizarContador,1000);atualizarContador();
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
+const topBtn=document.getElementById('topBtn');window.addEventListener('scroll',()=>{topBtn.style.display=scrollY>500?'block':'none'});topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+document.getElementById('presencaForm').addEventListener('submit',e=>{e.preventDefault();const nome=document.getElementById('nome').value.trim();const vai=document.getElementById('vai').value;if(!nome||!vai)return;alert(`Obrigado, ${nome}! Sua confirmação foi registrada nesta prévia.`);e.target.reset()});
 </script>
 </body>
 </html>
-
