@@ -12,7 +12,7 @@
     }
     nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
     header {
-      background:url('foto1.jpg') center/cover no-repeat;
+      background:url('foto2.jpg') center/cover no-repeat;
       height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
       text-align:center; color:white; position:relative;
     }
@@ -55,92 +55,119 @@
     </div>
   </header>
 
-<section class="data-section">
-  <div class="card">
-    <h2>O GRANDE DIA</h2>
-    <p>07 DE AGOSTO DE 2027 · 16H00</p>
+<section class="data-section" style="display:flex; gap:40px; justify-content:center; align-items:center; flex-wrap:wrap;">
+  <div class="card" style="flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center;">
+    <h2 style="font-family:'Playfair Display', serif;">O GRANDE DIA</h2>
+    <p style="font-size:1.2em;">07 DE AGOSTO DE 2027 · 16H00</p>
     <div class="calendar" id="calendar"></div>
   </div>
-  <div class="card">
+  <div class="card" style="flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center;">
     <img src="desenho.png" alt="Desenho do Recanto Januário" style="max-width:250px; margin:auto; display:block;">
+    <p style="margin-top:10px; font-size:1.2em;">08.07.27</p>
     <p>Recanto Januário — Sumaré, SP</p>
   </div>
 </section>
 
- <section id="historia" class="historia">
-  <h2>Nossa História</h2>
-  <p>
-    Aos 17 anos, éramos apenas dois jovens cercados por amigos em comum, dividindo risadas e descobertas do fim do ensino médio.
-    Uma viagem para Olímpia nos aproximou, mas ainda sem imaginar que o destino estava apenas começando a escrever nossa história.
-  </p>
-  <img src="foto2.jpg" class="polaroid">
+<section id="historia" class="historia" 
+         style="font-family:'Playfair Display', serif; 
+                line-height:1.8; 
+                max-width:800px; 
+                margin:auto; 
+                text-align:justify; 
+                font-size:1.1em; 
+                color:#333;">
+  <h2 style="text-align:center; font-size:2.4em; margin-bottom:30px; color:#5a1f2d;">
+    Nossa História
+  </h2>
 
-  <p>
-    O tempo passou, cada um seguiu seu caminho, viveu suas próprias aventuras. Até que, anos depois, uma nova viagem nos reuniu —
-    dessa vez para o interior de São Paulo. Foi ali que começamos a nos enxergar de verdade, sem pressa, sem máscaras,
-    descobrindo afinidades e percebendo que talvez o amor estivesse sempre por perto, esperando o momento certo.
+  <p style="margin-bottom:25px; text-indent:2em;">
+    Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio.
+    Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.
+  </p>
+  <img src="foto4.jpg" class="polaroid">
+
+  <p style="margin-bottom:25px; text-indent:2em;">
+    A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem,
+    dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente,
+    a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa
+    tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.
   </p>
   <img src="foto3.jpg" class="polaroid">
 
-  <p>
-    Quando finalmente nos encontramos, tudo fez sentido. Em março de 2026, veio o pedido — não em meio à multidão,
-    mas em um café da manhã tranquilo, em um Airbnb cheio de charme. Simples, íntimo e nosso. Do jeito que precisava ser.
+  <p style="margin-bottom:25px; text-indent:2em;">
+    Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos.
+    Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza,
+    como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã,
+    só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.
   </p>
   <img src="foto1.jpg" class="polaroid">
 
-  <p>
-    Hoje celebramos não apenas o dia em que decidimos nos casar, mas todos os caminhos que nos trouxeram até aqui.
-    O amor da nossa vida nem sempre é alguém novo; às vezes é alguém que a vida nos apresenta de novo,
-    oferecendo uma segunda chance de conhecer e escolher.
+  <p style="margin-bottom:25px; text-indent:2em;">
+    E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar,
+    mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro.
+    Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez.
+    Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.
   </p>
   <img src="foto5.jpg" class="polaroid">
 
-  <p>
+  <p style="margin-bottom:25px; text-indent:2em;">
     E que sorte a nossa ter tido essa chance.
   </p>
-  <img src="foto4.jpg" class="polaroid">
+
 </section>
 
-<section id="evento" class="evento">
-  <h2>O Evento</h2>
-  <img src="recanto.jpg" style="width:280px; border-radius:8px; display:block; margin:20px auto;">
-  <!-- Google Maps embed oficial -->
-  <iframe 
-    src="https://www.google.com/maps/place/Espa%C3%A7o+Recanto+Janu%C3%A1rio/@-22.8301822,-47.2898183,17z/data=!3m1!4b1!4m6!3m5!1s0x94c8bd024d7f4ef3:0x7c31c53eed5ca50a!8m2!3d-22.8301822!4d-47.2898183!16s%2Fg%2F11s4cmm6kq?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D" 
-    width="100%" height="300" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy">
-  </iframe>
-</section>
 
-<section id="programacao" class="programacao">
-  <h2>Programação</h2>
-  <div class="timeline">
-    <div><strong>15h30</strong><br>Recepção calorosa<br><em>Um momento para chegar com calma, brindar e sentir o clima da festa.</em></div>
-    <div><strong>16h00</strong><br>Cerimônia<br><em>O instante mais esperado: o sim que muda tudo.</em></div>
-    <div><strong>17h00</strong><br>Brinde e fotos<br><em>Um brinde ao amor, acompanhado de registros que ficarão para sempre.</em></div>
-    <div><strong>18h00</strong><br>Jantar e festa<br><em>Sabores, música e dança para celebrar até o último minuto.</em></div>
+<section class="data-section" style="display:flex; gap:40px; justify-content:center; align-items:center; flex-wrap:wrap;">
+  <div class="card" style="flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center;">
+    <h2 style="font-family:'Playfair Display', serif;">O GRANDE DIA</h2>
+    <p style="font-size:1.2em;">07 DE AGOSTO DE 2027 · 16H00</p>
+    <div class="calendar" id="calendar"></div>
+  </div>
+  <div class="card" style="flex:1; background:#5a1f2d; color:white; padding:20px; border-radius:8px; text-align:center;">
+    <img src="desenho.png" alt="Desenho do Recanto Januário" style="max-width:250px; margin:auto; display:block;">
+    <p style="margin-top:10px; font-size:1.2em;">08.07.27</p>
+    <p>Recanto Januário — Sumaré, SP</p>
   </div>
 </section>
 
-<section id="dresscode" class="dresscode">
-  <h2>Dress Code</h2>
-  <p>Sport Fino — elegância leve, sem exageros. Pense em vestidos midi, saltos médios, blazers ou camisas bem cortadas.</p>
+<section id="programacao" class="programacao">
+  <h2 style="font-family:'Playfair Display', serif;">Programação</h2>
+  <div class="timeline">
+    <div><strong>15h30</strong><br><em>Boas-vindas</em><br>Chegada dos convidados com aperitivos e música leve.</div>
+    <div><strong>16h00</strong><br><em>Cerimônia</em><br>O momento mais esperado: o sim que muda tudo.</div>
+    <div><strong>17h00</strong><br><em>Brinde & Fotos</em><br>Um brinde ao amor e registros que ficarão para sempre.</div>
+    <div><strong>18h00</strong><br><em>Jantar & Festa</em><br>Sabores, música e dança para celebrar até o último minuto.</div>
+  </div>
 </section>
 
-<section id="presenca" class="presenca">
-  <h2>Confirmação de Presença</h2>
-  <form id="presencaForm">
+
+<section id="dresscode" class="dresscode" style="text-align:center;">
+  <h2 style="font-family:'Playfair Display', serif;">Dress Code</h2>
+  <p style="font-size:1.2em;">Sport Fino</p>
+  <p style="max-width:600px; margin:auto;">
+    Elegância leve e descontraída: vestidos midi, saltos médios, blazers ou camisas bem cortadas.
+  </p>
+</section>
+
+
+<section id="presenca" class="presenca" style="text-align:center;">
+  <h2 style="font-family:'Playfair Display', serif;">Confirmação de Presença</h2>
+  <form id="presencaForm" style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:10px;">
     <input type="text" id="nome" placeholder="Seu nome">
     <input type="number" id="acompanhantes" placeholder="Número de acompanhantes">
     <button type="submit">Confirmar Presença</button>
   </form>
 </section>
 
-<footer>
-  <p>Feito com carinho para os nossos convidados</p>
-  <h3>Trilha Sonora</h3>
-   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Vc3bzFxXdrABa2DxgyCMT" 
+<footer style="background:#5a1f2d; color:white; text-align:center; padding:60px 20px; font-family:'Playfair Display', serif;">
+  <p style="font-size:1.3em; font-style:italic; margin-bottom:25px;">
+    Feito com carinho para celebrar cada detalhe do nosso grande dia
+  </p>
+  <h3 style="margin-bottom:15px;">Trilha Sonora</h3>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4Vc3bzFxXdrABa2DxgyCMT" 
           width="300" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 </footer>
+
 
 <button id="topBtn">↑</button>
 
