@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Casamento Bela & Kau</title>
   <style>
-    body { margin:0; font-family:'Georgia', serif; background:#1f3d2e; color:#fff; }
+    body { margin:0; font-family:'Georgia', serif; background:#fff; color:#333; }
     header {
       background:url('foto1.jpg') center/cover no-repeat;
       height:100vh;
@@ -20,7 +20,7 @@
       content:"";
       position:absolute;
       top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.5);
+      background:rgba(90,31,45,0.7); /* vinho translúcido */
     }
     header h1 {
       font-size:4em;
@@ -31,14 +31,59 @@
     header p { z-index:2; font-size:1.5em; position:relative; }
     #contador { font-size:1.5em; margin-top:20px; color:#d4af37; z-index:2; position:relative; }
     section { padding:60px 20px; max-width:1000px; margin:auto; }
-    h2 { color:#d4af37; font-family:'Times New Roman', serif; font-size:2em; margin-bottom:20px; }
-    .historia img, .evento img { width:100%; margin:20px 0; border-radius:8px; }
-    .timeline { border-left:3px solid #d4af37; padding-left:20px; }
-    .timeline div { margin-bottom:20px; }
-    footer { background:#0f1f17; color:white; text-align:center; padding:40px 20px; }
+    h2 { color:#5a1f2d; font-family:'Times New Roman', serif; font-size:2em; margin-bottom:20px; }
+    .polaroid {
+      background:white;
+      padding:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.3);
+      margin:20px auto;
+      display:block;
+      width:80%;
+      transform:rotate(-2deg);
+    }
+    .timeline {
+      position:relative;
+      margin:40px 0;
+      padding-left:40px;
+      border-left:3px solid #5a1f2d;
+    }
+    .timeline div {
+      margin-bottom:40px;
+      position:relative;
+    }
+    .timeline div::before {
+      content:"";
+      position:absolute;
+      left:-22px;
+      top:0;
+      width:20px;
+      height:20px;
+      background:#5a1f2d;
+      border-radius:50%;
+    }
+    footer { background:#5a1f2d; color:white; text-align:center; padding:40px 20px; }
     form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:auto; }
     input, button { padding:10px; font-size:1em; border-radius:5px; border:none; }
-    button { background:#d4af37; color:#1f3d2e; cursor:pointer; font-weight:bold; }
+    button { background:#d4af37; color:#5a1f2d; cursor:pointer; font-weight:bold; }
+    .data-section {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+    .data-section .card {
+      flex:1;
+      background:#5a1f2d;
+      color:white;
+      padding:20px;
+      border-radius:8px;
+      text-align:center;
+    }
+    .data-section img {
+      max-width:100%;
+      border-radius:8px;
+    }
   </style>
 </head>
 <body>
@@ -53,49 +98,61 @@
     <div id="contador"></div>
   </header>
 
+  <!-- Seção de Data com calendário e desenho -->
+  <section class="data-section">
+    <div class="card">
+      <h2>O GRANDE DIA</h2>
+      <p>07 DE AGOSTO DE 2027 · 16H00</p>
+      <img src="calendario.png" alt="Calendário do casamento">
+    </div>
+    <div class="card">
+      <img src="desenho.png" alt="Desenho do Recanto Januário">
+      <p>Recanto Januário — Sumaré, SP</p>
+    </div>
+  </section>
+
   <section class="historia">
     <h2>Nossa História</h2>
-    <div style="background:#0f1f17; padding:30px; border-radius:8px; color:#fff; line-height:1.6;">
-      <p>
-        Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio.
-        Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.
-      </p>
-      <img src="foto2.jpg">
+    <p>
+      Nós nos conhecemos aos 17 anos, quando tínhamos amigos em comum e estávamos saindo do ensino médio.
+      Chegamos a viajar juntos para Olímpia, ainda solteiros e sem imaginar que, anos depois, estaríamos aqui.
+    </p>
+    <img src="foto2.jpg" class="polaroid">
 
-      <p>
-        A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem,
-        dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente,
-        a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa
-        tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.
-      </p>
-      <img src="foto3.jpg">
+    <p>
+      A vida seguiu. Cada um viveu suas próprias histórias, e então, nos reencontramos em uma segunda viagem,
+      dessa vez para o interior de São Paulo. Foi ali que começamos a conversar de um jeito diferente,
+      a nos conhecer de verdade, a sair, descobrir afinidades e perceber, aos poucos, que talvez a pessoa certa
+      tivesse estado por perto o tempo todo, só faltava a oportunidade de enxergarmos um ao outro por inteiro.
+    </p>
+    <img src="foto3.jpg" class="polaroid">
 
-      <p>
-        Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos.
-        Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza,
-        como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã,
-        só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.
-      </p>
-      <img src="foto1.jpg">
+    <p>
+      Quando finalmente aconteceu, deu certo. E desde então, seguimos escolhendo estar juntos.
+      Em março de 2026, veio o pedido. Não foi no meio da multidão ou durante o Lollapalooza,
+      como talvez a história pudesse sugerir. Foi em um Airbnb bonito, durante um café da manhã,
+      só nós dois. Do jeito que precisava ser: simples, íntimo e nosso.
+    </p>
+    <img src="foto4.jpg" class="polaroid">
 
-      <p>
-        E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar,
-        mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro.
-        Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez.
-        Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.
-      </p>
-      <img src="foto5.jpg">
+    <p>
+      E agora estamos aqui, celebrando não apenas o dia em que decidimos nos casar,
+      mas todos os caminhos que precisaram acontecer para que a gente chegasse um ao outro.
+      Talvez o amor da nossa vida não seja necessariamente alguém que encontramos pela primeira vez.
+      Às vezes, é alguém que a vida coloca no nosso caminho e nos dá uma segunda chance de conhecer.
+    </p>
+    <img src="foto5.jpg" class="polaroid">
 
-      <p>
-        E que sorte a nossa ter tido essa chance.
-      </p>
-      <img src="foto4.jpg">
-    </div>
+    <p>
+      E que sorte a nossa ter tido essa chance.
+    </p>
+    <img src="foto6.jpg" class="polaroid">
+    <img src="foto7.jpg" class="polaroid">
   </section>
 
   <section class="evento">
     <h2>O Evento</h2>
-    <img src="recanto.jpg">
+    <img src="recanto.jpg" class="polaroid">
     <iframe src="https://www.google.com/maps/search/?api=1&query=Recanto%20do%20Janu%C3%A1rio%20Sumar%C3%A9%20SP" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     <h3>Dress Code: Sport Fino</h3>
     <p>Blazer leve, vestido midi, salto médio.</p>
@@ -104,10 +161,10 @@
   <section class="programacao">
     <h2>Programação</h2>
     <div class="timeline">
-      <div><strong>15h30</strong> - Chegada dos convidados</div>
-      <div><strong>16h00</strong> - Cerimônia</div>
-      <div><strong>17h00</strong> - Brinde & Fotos</div>
-      <div><strong>18h00</strong> - Recepção</div>
+      <div><strong>15h30</strong><br>Chegada dos convidados<br><em>Recepção com boas-vindas e aperitivos.</em></div>
+      <div><strong>16h00</strong><br>Cerimônia<br><em>O sim que vai mudar tudo. Emoção e celebração.</em></div>
+      <div><strong>17h00</strong><br>Brinde & Fotos<br><em>Brinde aos noivos e registros desse momento.</em></div>
+      <div><strong>18h00</strong><br>Recepção<br><em>Jantar, música e muita dança para fechar a noite.</em></div>
     </div>
   </section>
 
